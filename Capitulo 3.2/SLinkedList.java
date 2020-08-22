@@ -37,7 +37,7 @@ public class SLinkedList{
     String s = "";
     for(Node n = head; n != null; n = n.getNext()){
       s += n.getElement();
-      if(n != tail){ s += ", ";}
+      if(n != tail){ s += ", "; }
     }
     return s;
   }
