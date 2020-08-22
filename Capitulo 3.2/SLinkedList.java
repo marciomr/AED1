@@ -27,7 +27,7 @@ public class SLinkedList{
     Node tmp = head;
     head = head.getNext();
     tmp.setNext(null);
-    if(head == null){ tail = null; };
+    if(head == null){ tail = null; }
     size--;
 
     return tmp;
