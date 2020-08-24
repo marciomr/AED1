@@ -7,10 +7,14 @@ public class SLinkedList{
     size = 0;
   }
 
+  public long size(){ return size; }
+
+  public boolean isEmpty(){ return(size == 0); }
+
   public void addFirst(Node n){
     n.setNext(head);
     head = n;
-    if(tail == null){ tail = n; }
+    if(isEmpty()){ tail = n; }
     size++;
   }
 
@@ -18,28 +22,28 @@ public class SLinkedList{
     n.setNext(null);
     tail.setNext(n);
     tail = n;
-    if(head == null){ head = n; }
+    if(isEmpty()){ head = n; }
     size++;
   }
 
   public Node removeFirst() throws IllegalStateException{
-    if(head == null){ throw new IllegalStateException("Lista vazia"); }
+    if(size == 0){ throw new IllegalStateException("Lista vazia"); }
     Node tmp = head;
     head = head.getNext();
     tmp.setNext(null);
-    if(head == null){ tail = null; }
+    if(isEmpty()){ tail = null; }
     size--;
 
     return tmp;
   }
 
   public String toString(){
-    String s = "";
+    String s = "[";
     for(Node n = head; n != null; n = n.getNext()){
       s += n.getElement();
       if(n != tail){ s += ", "; }
     }
-    return s;
+    return s + "]";
   }
 
   // remover o último é mais complicado porque não temos um ponteiro pro penúltimo
