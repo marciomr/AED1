@@ -1,4 +1,4 @@
-public DNode{
+public class DNode{
   protected String element;
   protected DNode prev, next;
 
@@ -14,5 +14,5 @@ public DNode{
 
   public void setElement(String newElement){ element = newElement; }
   public void setPrev(DNode newPrev){ prev = newPrev; }
-  public void setPrev(DNode newNext){ next = newNext; }  
+  public void setNext(DNode newNext){ next = newNext; }
 }
