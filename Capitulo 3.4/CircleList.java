@@ -58,10 +58,10 @@ class CircleList {
     Node pegador;
     Node ganso;
     Random rand = new Random();
-    String[] nomes = {"Ana", "Maria", "Julio", "Petra", "Marli", "Sandra", "Vic", "João"};
+    String[] jogadores = {"Ana", "Maria", "Julio", "Petra", "Marli", "Sandra", "Vic", "João"};
 
-    for(String nome : nomes){
-      C.add(new Node(nome, null));
+    for(String jogador : jogadores){
+      C.add(new Node(jogador, null));
       C.advance();
     }
 
