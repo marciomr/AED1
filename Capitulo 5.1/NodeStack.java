@@ -11,15 +11,15 @@ public class NodeStack<E> implements Stack<E> {
 
   public boolean isEmpty(){ return top == null; }
 
+  public E top() throws EmptyStackException {
+    if(isEmpty()) throw new EmptyStackException("Pilha vazia");
+    return top.getElement();
+  }
+
   public void push(E elem){
     Node<E> newNode = new Node<E>(elem, top);
     top = newNode;
     size++;
-  }
-
-  public E top() throws EmptyStackException {
-    if(isEmpty()) throw new EmptyStackException("Pilha vazia");
-    return top.getElement();
   }
 
   public E pop() throws EmptyStackException {
