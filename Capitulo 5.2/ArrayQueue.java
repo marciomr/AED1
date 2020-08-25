@@ -1,6 +1,6 @@
 class ArrayQueue<E> implements Queue<E> {
   protected int capacity;
-  public static final int CAPACITY = 1000;
+  public static final int CAPACITY = 5;
   protected E Q[];
   protected int f, r;
 
@@ -39,9 +39,10 @@ class ArrayQueue<E> implements Queue<E> {
   public String toString(){
     String s = "[";
     if(!isEmpty()) s += Q[f];
-    for(int i = 1, j = f + 1; i < size(); i++, j = (j + 1) % capacity)
+    for(int i = 1, j = (f + 1) % capacity; i < size(); i++, j = ((j + 1) % capacity))
       // size - 1 vezes eu avanço no arranjo circular
       s += ", " + Q[j];
+
     return s + "]";
   }
 
@@ -49,19 +50,27 @@ class ArrayQueue<E> implements Queue<E> {
     Object o;
     Queue<Integer> A = new ArrayQueue<Integer>();
     A.enqueue(7);
-    System.out.println(A);
-    System.out.println(A.dequeue());
     A.enqueue(9);
+    A.enqueue(42);
+    System.out.println(A.size());
     System.out.println(A);
-    System.out.println(A.dequeue());
-
-    Queue<String> B = new ArrayQueue<String>();
-    B.enqueue("Bob");
-    System.out.println(B);
-    B.enqueue("Alice");
-    System.out.println(B);
-    System.out.println(B.dequeue());
-    B.enqueue("Eve");
-    System.out.println(B);
+    A.enqueue(12);
+    System.out.println(A.size());
+    System.out.println(A);
+    A.dequeue();
+    A.dequeue();
+    System.out.println(A.size());
+    System.out.println(A);
+    A.dequeue();
+    System.out.println(A.size());
+    System.out.println(A);
+    A.dequeue();
+    System.out.println(A.size());
+    System.out.println(A);
+    A.enqueue(7);
+    A.enqueue(9);
+    A.enqueue(42);
+    System.out.println(A.size());
+    System.out.println(A);
   }
 }
