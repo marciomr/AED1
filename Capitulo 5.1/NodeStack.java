@@ -29,4 +29,32 @@ public class NodeStack<E> implements Stack<E> {
     size--;
     return tmp;
   }
+
+  public String toString(){
+    String s = "[";
+    if(!isEmpty()) s += top();
+    for(Node cur = top.getNext(); cur != null ; cur = cur.getNext())
+      s += ", " + cur.getElement();
+    return s + "]";
+  }
+
+  public static void main(String[] args) {
+    Object o;
+    NodeStack<Integer> A = new NodeStack<Integer>();
+    A.push(7);
+    System.out.println(A);
+    System.out.println(A.pop());
+    A.push(9);
+    System.out.println(A);
+    System.out.println(A.pop());
+
+    NodeStack<String> B = new NodeStack<String>();
+    B.push("Bob");
+    System.out.println(B);
+    B.push("Alice");
+    System.out.println(B);
+    System.out.println(B.pop());
+    B.push("Eve");
+    System.out.println(B);
+  }
 }
