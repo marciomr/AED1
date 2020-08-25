@@ -17,14 +17,14 @@ class ArrayStack<E> implements Stack<E> {
 
   public boolean isEmpty(){ return top < 0; }
 
-  public void push(E element) throws FullStackException {
-    if(size() == capacity) throw new FullStackException("A pilha está cheia");
-    S[++top] = element; // primeiro atualiza top e depois coloca no arranjo
-  }
-
   public E top() throws EmptyStackException {
     if(isEmpty()) throw new EmptyStackException("Pilha vazia");
     return S[top];
+  }
+
+  public void push(E element) throws FullStackException {
+    if(size() == capacity) throw new FullStackException("A pilha está cheia");
+    S[++top] = element; // primeiro atualiza top e depois coloca no arranjo
   }
 
   public E pop() throws EmptyStackException {
