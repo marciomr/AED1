@@ -65,7 +65,7 @@ class ArrayDeque<E> implements Deque<E> {
     return tmp;
   }
 
-  public String toString(){
+  public String toString() {
     String s = "[";
     if(!isEmpty()){
      s += D[f];
