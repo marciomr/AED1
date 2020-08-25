@@ -16,8 +16,7 @@ class ArrayDeque<E> implements Deque<E> {
 
   public int size(){
     if(isEmpty()) return 0;
-    if(r >= f) return r - f + 1;
-    else return r - f + capacity + 1;
+    return (capacity - f + r + 1) % capacity;
   }
 
   public boolean isEmpty(){ return D[f] == null; }
@@ -70,7 +69,7 @@ class ArrayDeque<E> implements Deque<E> {
     String s = "[";
     if(!isEmpty()){
      s += D[f];
-     for(int i = 1, j = f + 1; i < size(); i++, j = (j + 1) % capacity)
+     for(int i = 1, j = (f + 1) % capacity; i < size(); i++, j = (j + 1) % capacity)
       s += ", " + D[j];
     }
     return s + "]";
@@ -82,13 +81,25 @@ class ArrayDeque<E> implements Deque<E> {
     A.addFirst(7);
     A.addFirst(9);
     A.addFirst(42);
+    System.out.println(A.size());
     System.out.println(A);
     A.addLast(12);
+    System.out.println(A.size());
     System.out.println(A);
     A.removeLast();
     A.removeLast();
+    System.out.println(A.size());
     System.out.println(A);
     A.removeFirst();
+    System.out.println(A.size());
+    System.out.println(A);
+    A.removeFirst();
+    System.out.println(A.size());
+    System.out.println(A);
+    A.addLast(7);
+    A.addLast(9);
+    A.addLast(42);
+    System.out.println(A.size());
     System.out.println(A);
   }
 }
