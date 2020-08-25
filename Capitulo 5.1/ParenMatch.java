@@ -1,8 +1,8 @@
 class ParenMatch {
 
   public static boolean parenMatch(String entrada){
-    Stack<Character> S = new ArrayStack<Character>(entrada.length());
-
+//    Stack<Character> S = new ArrayStack<Character>(entrada.length());
+    Stack<Character> S = new NodeStack<Character>();
     for(int i = 0; i < entrada.length(); i++){
       char simbolo = entrada.charAt(i);
       if(simbolo == '(' || simbolo == '{' || simbolo == '[')

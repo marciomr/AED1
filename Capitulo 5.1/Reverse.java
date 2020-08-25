@@ -2,7 +2,8 @@ import java.util.Arrays;
 
 class Reverse {
   public static <E> void reverse(E[] a){
-    Stack<E> S = new ArrayStack<E>(a.length);
+//    Stack<E> S = new ArrayStack<E>(a.length);
+    Stack<E> S = new NodeStack<E>();
     for(E element : a) S.push(element);
     for(int i = 0; i < a.length; i++) a[i] = S.pop();
   }
