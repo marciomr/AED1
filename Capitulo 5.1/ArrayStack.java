@@ -44,7 +44,7 @@ class ArrayStack<E> implements Stack<E> {
 
   public static void main(String[] args) {
     Object o;
-    ArrayStack<Integer> A = new ArrayStack<Integer>();
+    Stack<Integer> A = new ArrayStack<Integer>();
     A.push(7);
     System.out.println(A);
     System.out.println(A.pop());
@@ -52,7 +52,7 @@ class ArrayStack<E> implements Stack<E> {
     System.out.println(A);
     System.out.println(A.pop());
 
-    ArrayStack<String> B = new ArrayStack<String>();
+    Stack<String> B = new ArrayStack<String>();
     B.push("Bob");
     System.out.println(B);
     B.push("Alice");

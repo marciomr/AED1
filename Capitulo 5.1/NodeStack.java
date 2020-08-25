@@ -40,7 +40,7 @@ public class NodeStack<E> implements Stack<E> {
 
   public static void main(String[] args) {
     Object o;
-    NodeStack<Integer> A = new NodeStack<Integer>();
+    Stack<Integer> A = new NodeStack<Integer>();
     A.push(7);
     System.out.println(A);
     System.out.println(A.pop());
@@ -48,7 +48,7 @@ public class NodeStack<E> implements Stack<E> {
     System.out.println(A);
     System.out.println(A.pop());
 
-    NodeStack<String> B = new NodeStack<String>();
+    Stack<String> B = new NodeStack<String>();
     B.push("Bob");
     System.out.println(B);
     B.push("Alice");
