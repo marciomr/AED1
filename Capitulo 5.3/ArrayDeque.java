@@ -76,7 +76,6 @@ class ArrayDeque<E> implements Deque<E> {
   }
 
   public static void main(String[] args) {
-    Object o;
     Deque<Integer> A = new ArrayDeque<Integer>();
     A.addFirst(7);
     A.addFirst(9);
