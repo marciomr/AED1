@@ -8,7 +8,7 @@ public class TicTacToe {
     clearBoard();
   }
 
-  void clearBoard(){
+  public void clearBoard(){
     for(int i = 0; i < 3; i++)
       for(int j = 0; j < 3; j++)
         board[i][j] = EMPTY;
