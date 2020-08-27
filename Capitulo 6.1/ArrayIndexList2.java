@@ -1,6 +1,6 @@
 public class ArrayIndexList<E> implements IndexList<E> {
   protected int capacity;
-  public static final int CAPACITY = 16;
+  public static final int CAPACITY = 1000;
   protected E V[];
   protected int size;
 
@@ -18,15 +18,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
   public boolean isEmpty(){ return size == 0; }
 
-  public void add(int i, E e) throws IndexOutOfBoundsException {
-    if(size == capacity){
-      capacity *= 2;
-      E[] tmp = (E[]) new Object[capacity];
-      for(int j = 0; j < size; j++)
-        tmp[j] = V[j];
-      V = tmp;
-    }
-
+  public void add(int i, E e) throws IndexOutOfBoundsException, FullArrayIndexListException {
+    if(size == capacity)
+      throw new FullArrayIndexListException("Arranjo cheio.");
     if((i < 0) || (i > size))
       throw new IndexOutOfBoundsException("Indice inválido.");
 
@@ -67,8 +61,15 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
   public static void main(String[] args) {
     ArrayIndexList<Integer> A = new ArrayIndexList<Integer>();
-    for(int i = 0; i < 1000; i++)
-      A.add(0, i);
+    A.add(0, 4);
+    A.add(0, 3);
+    A.add(0, 1);
+    System.out.println(A);
+    A.add(3, 5);
+    System.out.println(A);
+    A.add(1, 2);
+    System.out.println(A);
+    A.remove(0);
     System.out.println(A);
   }
 }
