@@ -16,4 +16,5 @@ public interface PositionList<E> extends Iterable<E> {
   public E remove(Position<E> p) throws InvalidPositionException;
   public E set(Position<E> p, E e) throws InvalidPositionException;
   public Iterator<E> iterator();
+  public Iterable<Position<E> > positions();
 }

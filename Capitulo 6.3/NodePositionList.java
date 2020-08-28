@@ -116,6 +116,16 @@ public class NodePositionList<E> implements PositionList<E> {
 
   public Iterator<E> iterator(){ return new ElementIterator<E>(this); }
 
+  public Iterable<Position <E> > positions() {
+    PositionList<Position<E> > P = new NodePositionList<Position<E> >();
+    if(!isEmpty()){
+      for(Position<E> p = first(); p != last(); p = next(p))
+        P.addLast(p);
+      P.addLast(last());
+    }
+    return P;
+  }
+
   public String toString() {
     String s = "[";
     Iterator<E> it = iterator();
