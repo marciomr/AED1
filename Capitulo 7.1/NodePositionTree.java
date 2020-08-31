@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class NodePositionTree<E> implements Tree<E> {
   protected int numElements;
@@ -68,17 +69,17 @@ public class NodePositionTree<E> implements Tree<E> {
     Tree<Integer> tree = new NodePositionTree<Integer>();
     TreeNode<Integer> root = (TreeNode<Integer>) tree.root();
     root.setElement(1);
-    root.setChildren(new NodePositionList<Position<Integer> >());
-    root.getChildren().addFirst(new TreeNode<Integer>(4, null, null));
-    root.getChildren().addFirst(new TreeNode<Integer>(3, null, null));
-    root.getChildren().addFirst(new TreeNode<Integer>(2, null, null));
+    root.setChildren(new LinkedList<Position<Integer> >());
+    root.getChildren().add(new TreeNode<Integer>(4, null, null));
+    root.getChildren().add(new TreeNode<Integer>(3, null, null));
+    root.getChildren().add(new TreeNode<Integer>(2, null, null));
     Iterator<Position<Integer> > childrenIterator = root.getChildren().iterator();
     TreeNode<Integer> firstChild = (TreeNode<Integer>) childrenIterator.next();
     TreeNode<Integer> secondChild = (TreeNode<Integer>) childrenIterator.next();
     TreeNode<Integer> thirdChild = (TreeNode<Integer>) childrenIterator.next();
-    firstChild.setChildren(new NodePositionList<Position<Integer> >());
-    firstChild.getChildren().addFirst(new TreeNode<Integer>(17, null, null));
-    firstChild.getChildren().addFirst(new TreeNode<Integer>(13, null, null));
+    firstChild.setChildren(new LinkedList<Position<Integer> >());
+    firstChild.getChildren().add(new TreeNode<Integer>(17, null, null));
+    firstChild.getChildren().add(new TreeNode<Integer>(13, null, null));
     Iterator<Position<Integer> > grandChildrenIterator = firstChild.getChildren().iterator();
     TreeNode<Integer> firstGrandchild = (TreeNode<Integer>) grandChildrenIterator.next();
     TreeNode<Integer> secondGrandchild = (TreeNode<Integer>) grandChildrenIterator.next();
