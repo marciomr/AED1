@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.List;
 import java.util.LinkedList;
 
 public class NodePositionTree<E> implements Tree<E> {
@@ -25,6 +26,27 @@ public class NodePositionTree<E> implements Tree<E> {
   public int size() { return numElements; }
 
   public boolean isEmpty() { return root == null; }
+
+  public Iterable<Position <E> > positions() {
+    List<Position<E> > positions = new LinkedList<Position<E> >();
+    if(!isEmpty()) preorderPositions(root(), positions);
+    return positions;
+  }
+
+  private void preorderPositions(Position<E> v, List<Position<E> > positions) {
+    positions.add(v);
+    if(isInternal(v))
+      for(Position<E> w : children(v))
+        preorderPositions(w, positions);
+  }
+
+  public Iterator<E> iterator() {
+    Iterable<Position<E> > Positions = positions();
+    List<E> elements = new LinkedList<E>();
+    for(Position<E> p : Positions)
+      elements.add(p.element());
+    return elements.iterator();
+  }
 
   public E replace(Position<E> p, E e) throws InvalidPositionException {
     TreeNode<E> tmp = checkPosition(p);
