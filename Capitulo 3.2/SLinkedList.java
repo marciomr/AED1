@@ -27,12 +27,12 @@ public class SLinkedList{
   }
 
   public Node removeFirst() throws IllegalStateException{
-    if(size == 0){ throw new IllegalStateException("Lista vazia"); }
+    if(isEmpty()){ throw new IllegalStateException("Lista vazia"); }
     Node tmp = head;
     head = head.getNext();
     tmp.setNext(null);
-    if(isEmpty()){ tail = null; }
     size--;
+    if(isEmpty()){ tail = null; }
 
     return tmp;
   }
