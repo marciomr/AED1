@@ -21,7 +21,7 @@ class DLinkedList {
 
   public DNode getLast() throws IllegalStateException{
     if(isEmpty()) throw new IllegalStateException("Lista vazia");
-    return header.getPrev();
+    return trailer.getPrev();
   }
 
   public DNode getPrev(DNode v) throws IllegalArgumentException{
@@ -94,6 +94,7 @@ class DLinkedList {
 
     list.remove(first);
     list.addFirst(new DNode("Novo primeiro", null, null));
+    list.remove(list.getLast()); // remove o último
     list.addLast(new DNode("Novo último", null, null));
     System.out.println(list.toString());
   }
