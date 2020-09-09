@@ -1,6 +1,6 @@
 public class Caesar{
   public static final int ALPHASIZE = 26;
-  public static final char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+  public static final char[] alpha = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
   'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
   'X', 'Y', 'Z'};
   protected char[] encrypt = new char[ALPHASIZE];
@@ -36,11 +36,11 @@ public class Caesar{
     System.out.println("Encryption order: " + new String(cipher.encrypt));
     System.out.println("Decryption order: " + new String(cipher.decrypt));
 
-    String secret = "THE EAGLE IS IN PLAY; MEET AT JOE'S.";
+    String secret = "TODO MUNDO VAI PASSAR EM AED1!";
     secret = cipher.encrypt(secret);
     System.out.println(secret);
-    secret = cipher.decrypt(secret);
-    System.out.println(secret);
+    String plain = cipher.decrypt(secret);
+    System.out.println(plain);
   }
 
 }
