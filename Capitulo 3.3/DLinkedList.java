@@ -4,8 +4,9 @@ class DLinkedList {
 
   public DLinkedList(){
     header = new DNode(null, null, null);
-    trailer = new DNode(null, header, null);
+    trailer = new DNode(null, null, null);
     header.setNext(trailer);
+    trailer.setPrev(header);
     size = 0;
   }
 
