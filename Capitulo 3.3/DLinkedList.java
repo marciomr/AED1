@@ -1,6 +1,6 @@
 class DLinkedList {
   protected DNode header, trailer;
-  protected long size;
+  protected int size;
 
   public DLinkedList(){
     header = new DNode(null, null, null);
