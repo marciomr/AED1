@@ -95,13 +95,13 @@ class DLinkedList {
 
   public static void main(String[] args) {
     DLinkedList list = new DLinkedList();
+
     list.addFirst(new DNode("Úlitmo", null, null));
     list.addFirst(new DNode("Penúltimo", null, null));
-    DNode first = new DNode("Primeiro", null, null);
-    list.addFirst(first);
+    list.addFirst(new DNode("Primeiro", null, null));
     System.out.println(list.toString());
 
-    list.remove(first);
+    list.remove(list.getFirst()); // remove o primeiro
     list.addFirst(new DNode("Novo primeiro", null, null));
     list.remove(list.getLast()); // remove o último
     list.addLast(new DNode("Novo último", null, null));
