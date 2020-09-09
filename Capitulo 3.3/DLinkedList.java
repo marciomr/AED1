@@ -12,7 +12,7 @@ class DLinkedList {
     size = 0;
   }
 
-  public long size(){ return size; }
+  public int size(){ return size; }
 
   public boolean isEmpty(){ return(size == 0); }
 
@@ -80,6 +80,14 @@ class DLinkedList {
     size--;
   }
 
+  public void removeFirst() throws IllegalStateException{
+    remove(getFirst());
+  }
+
+  public void removeLast() throws IllegalStateException{
+    remove(getLast());
+  }
+
   public boolean hasPrev(DNode node){ return(node != header); }
 
   public boolean hasNext(DNode node){ return(node != trailer); }
@@ -101,9 +109,9 @@ class DLinkedList {
     list.addFirst(new DNode("Primeiro", null, null));
     System.out.println(list.toString());
 
-    list.remove(list.getFirst()); // remove o primeiro
+    list.removeFirst();
     list.addFirst(new DNode("Novo primeiro", null, null));
-    list.remove(list.getLast()); // remove o último
+    list.removeLast(); 
     list.addLast(new DNode("Novo último", null, null));
     System.out.println(list.toString());
   }
