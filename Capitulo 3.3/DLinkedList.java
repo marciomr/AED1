@@ -5,8 +5,10 @@ class DLinkedList {
   public DLinkedList(){
     header = new DNode(null, null, null);
     trailer = new DNode(null, null, null);
+
     header.setNext(trailer);
     trailer.setPrev(header);
+
     size = 0;
   }
 
@@ -37,20 +39,26 @@ class DLinkedList {
   // insere newNode antes de nextNode
   public void addBefore(DNode nextNode, DNode newNode) throws IllegalArgumentException{
     DNode prevNode = nextNode.getPrev(); // aqui pode jogar a exceção
+
     newNode.setPrev(prevNode);
     newNode.setNext(nextNode);
+
     nextNode.setPrev(newNode);
     prevNode.setNext(newNode);
+
     size++;
   }
 
   // insere newNode depois de prevNode
   public void addAfter(DNode prevNode, DNode newNode) throws IllegalArgumentException{
     DNode nextNode = prevNode.getNext(); // aqui pode jogar a exceção
+
     newNode.setPrev(prevNode);
     newNode.setNext(nextNode);
+
     nextNode.setPrev(newNode);
     prevNode.setNext(newNode);
+
     size++;
   }
 
@@ -64,6 +72,7 @@ class DLinkedList {
 
     prev.setNext(next);
     next.setPrev(prev);
+
     node.setNext(null);
     node.setPrev(null);
 
