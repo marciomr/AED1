@@ -8,19 +8,19 @@ class ParenMatch {
       if(simbolo == '(' || simbolo == '{' || simbolo == '[')
         S.push(simbolo);
       else if(simbolo == ')' || simbolo == '}' || simbolo == ']'){
-        if(S.isEmpty()) return false; // abriu sem fechar
+        if(S.isEmpty()) return false; // fechou sem abrir
         char topo = S.pop();
         if(simbolo == ')' && topo != '(') return false;
         if(simbolo == ']' && topo != '[') return false;
         if(simbolo == '}' && topo != '{') return false;
       }
     }
-    if(S.isEmpty()) return true;
-    return false;
+    return S.isEmpty();
   }
 
   public static void main(String[] args) {
-    String entrada = "()(()){([()])}";
+//    String entrada = "()(()){([()])";
+    String entrada = "({)}";
     if(parenMatch(entrada))
       System.out.println(entrada + " tem os parenteses batendo");
     else
