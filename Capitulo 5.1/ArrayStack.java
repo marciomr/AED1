@@ -43,22 +43,39 @@ class ArrayStack<E> implements Stack<E> {
   }
 
   public static void main(String[] args) {
-    Object o;
-    Stack<Integer> A = new ArrayStack<Integer>();
-    A.push(7);
-    System.out.println(A);
-    System.out.println(A.pop());
-    A.push(9);
-    System.out.println(A);
-    System.out.println(A.pop());
-
-    Stack<String> B = new ArrayStack<String>();
-    B.push("Bob");
-    System.out.println(B);
-    B.push("Alice");
-    System.out.println(B);
-    System.out.println(B.pop());
-    B.push("Eve");
-    System.out.println(B);
+    Stack<Integer> C = new ArrayStack<Integer>();
+    C.push(5);
+    System.out.println(C);
+    C.push(3);
+    System.out.println(C);
+    System.out.println(C.pop());
+    System.out.println(C);
+    C.push(7);
+    System.out.println(C);
+    System.out.println(C.pop());
+    System.out.println(C);
+    System.out.println(C.top());
+    System.out.println(C);
+    System.out.println(C.pop());
+    System.out.println(C);
+    System.out.print(C.isEmpty());
+    System.out.println(C);
+    C.push(9);
+    System.out.println(C);
+    C.push(7);
+    System.out.println(C);
+    C.push(3);
+    System.out.println(C);
+    C.push(5);
+    System.out.println(C);
+    System.out.println(C.size());
+    System.out.println(C.pop());
+    System.out.println(C);
+    C.push(8);
+    System.out.println(C);
+    System.out.println(C.pop());
+    System.out.println(C);
+    System.out.println(C.pop());
+    System.out.println(C);
   }
 }
