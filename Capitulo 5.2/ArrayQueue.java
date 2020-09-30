@@ -1,6 +1,6 @@
 class ArrayQueue<E> implements Queue<E> {
   protected int capacity;
-  public static final int CAPACITY = 5;
+  public static final int CAPACITY = 100;
   protected E Q[];
   protected int f, r;
 
@@ -10,6 +10,7 @@ class ArrayQueue<E> implements Queue<E> {
 
   public ArrayQueue(int cap){
     capacity = cap;
+    f = r = 0;
     Q = (E[]) new Object[capacity];
   }
 
@@ -49,28 +50,30 @@ class ArrayQueue<E> implements Queue<E> {
   public static void main(String[] args) {
     Object o;
     Queue<Integer> A = new ArrayQueue<Integer>();
-    A.enqueue(7);
-    A.enqueue(9);
-    A.enqueue(42);
-    System.out.println(A.size());
+    A.enqueue(5);
     System.out.println(A);
-    A.enqueue(12);
-    System.out.println(A.size());
+    A.enqueue(3);
     System.out.println(A);
     A.dequeue();
-    A.dequeue();
-    System.out.println(A.size());
-    System.out.println(A);
-    A.dequeue();
-    System.out.println(A.size());
-    System.out.println(A);
-    A.dequeue();
-    System.out.println(A.size());
     System.out.println(A);
     A.enqueue(7);
+    System.out.println(A);
+    A.dequeue();
+    System.out.println(A);
+    System.out.println(A.front());
+    A.dequeue();
+    System.out.println(A);
+    System.out.println(A.isEmpty());
     A.enqueue(9);
-    A.enqueue(42);
+    System.out.println(A);
+    A.enqueue(7);
+    System.out.println(A);
     System.out.println(A.size());
+    A.enqueue(3);
+    System.out.println(A);
+    A.enqueue(5);
+    System.out.println(A);
+    A.dequeue();
     System.out.println(A);
   }
 }
